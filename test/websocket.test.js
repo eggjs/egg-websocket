@@ -1,13 +1,14 @@
 'use strict';
 
-const request = require('supertest');
+// const assert = require('assert');
 const mm = require('egg-mock');
+// const WebSocket = require('ws');
 
 describe('test/websocket.test.js', () => {
   let app;
   before(() => {
     app = mm.app({
-      baseDir: 'apps/websocket-test',
+      baseDir: 'apps/websocket',
     });
     return app.ready();
   });
@@ -16,9 +17,6 @@ describe('test/websocket.test.js', () => {
   afterEach(mm.restore);
 
   it('should GET /', () => {
-    return request(app.callback())
-      .get('/')
-      .expect('hi, websocket')
-      .expect(200);
+    // const ws = new WebSocket('ws://localhost:7001');
   });
 });
